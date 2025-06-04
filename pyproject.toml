@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gemagent"
+version = "0.1.0"
+description = "Free Gemini-based tool-using agent SDK."
+readme = "README.md"
+authors = [
+  { name="Rishabh Dubey" }
+]
+license = { text = "MIT" }
+dependencies = [
+  "google-generativeai>=0.2.0",
+  "python-dotenv>=0.20.0",
+  "nest_asyncio>=1.5.6"
+]
+classifiers = [
+  "Programming Language :: Python :: 3.8",
+  "License :: OSI Approved :: MIT License",
+]
+
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["gemagent"]
+exclude = ["web"]
+
+[project.urls]
+"Homepage" = "http://github.com/rishabh3562/gemagent-sdk"
