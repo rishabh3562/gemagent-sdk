@@ -4,7 +4,7 @@ import google.generativeai as genai
 from gemagent.tools import TOOL_REGISTRY
 from gemagent.parser import parse_args
 from gemagent.stream import STREAM_SIM
-
+from gemagent.config import configure
 class Agent:
     """
     Core Agent class defining name, instructions, model, tools, etc.
@@ -21,7 +21,7 @@ class Agent:
         self.max_tokens = max_tokens
         self.metadata = metadata or {}
         self.async_callback = async_callback
-
+        # configure(api_key)
     def build_prompt(self, user_input: str) -> str:
         """
         Construct the full prompt including tool list and user input.
